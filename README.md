@@ -2,7 +2,7 @@
 
 Wolox's base project for the React Native's team technical interview
 
-Updated by: https://github.com/djmaam
+Updated by: [Djmaam](https://marcosarrieta.dev).
 
 ### Objective
 
