@@ -13,6 +13,14 @@ You must follow the instructions that have been shared to you to solve the exerc
 
 ### Setting up Environtment
 
+To run the Local_API:
+
+```shell
+    npm install -g json-server
+    json-server --watch db.json
+    
+```
+
 Create or copy the file ./src/Configs/env.example.json to ./src/Configs/env.json.
 
 Next, to start the app in Android run:
