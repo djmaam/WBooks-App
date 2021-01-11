@@ -1,35 +1,32 @@
 import React, {useEffect, useState} from 'react';
-import {
-  StyleSheet,
-  View,
-  FlatList,
-  ActivityIndicator,
-  Text,
-} from 'react-native';
+import {View, FlatList, ActivityIndicator, Text} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
+
 import {SearchInput} from '../../Components/FormInputs';
 import BookCard from '../../Components/BookCard';
-import {COLORS, FONTS} from '../../Configs/constants';
-import {GET_BOOKS} from '../../Services';
+import {COLORS} from '../../Configs/constants';
+import {GET_BOOKS_BY_SEARCH} from '../../Services';
 
-export default function SearchScreen(props) {
+import {styles} from './styles';
+
+export default function SearchScreen() {
   const navigation = useNavigation();
   const [library, setLibrary] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [textSearch, setTextSearch] = useState('');
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
-    if (textSearch.length > 0) {
+    if (search.length > 0) {
       getBooks();
     } else {
       setLibrary([]);
     }
-  }, [textSearch]);
+  }, [search]);
 
   const getBooks = async () => {
     try {
-      const {data} = await GET_BOOKS({textSearch});
+      const {data} = await GET_BOOKS_BY_SEARCH({search});
       console.log('GET_BOOKS DATA: ', data);
       setLibrary(data);
       setIsLoading(false);
@@ -74,8 +71,8 @@ export default function SearchScreen(props) {
         style={styles.searchBar}
         placeholder={'Search your favorite book here...'}
         placeholderTextColor={COLORS.WHITE}
-        value={textSearch}
-        onChangeText={(value) => setTextSearch(value)}
+        value={search}
+        onChangeText={(value) => setSearch(value)}
       />
       <FlatList
         data={library}
@@ -94,41 +91,3 @@ export default function SearchScreen(props) {
     </View>
   );
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: '4%',
-    marginTop: 50,
-  },
-  activityIndicator: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-  searchBar: {
-    backgroundColor: COLORS.PRIMARY,
-    color: COLORS.WHITE,
-    borderRadius: 25,
-    elevation: 6,
-    marginVertical: 8,
-    shadowColor: COLORS.PRIMARY,
-    shadowOffset: {
-      width: 0,
-      height: 5,
-    },
-    shadowOpacity: 0.34,
-    shadowRadius: 6.27,
-  },
-  errorMsg: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-  textError: {
-    justifyContent: 'center',
-    alignContent: 'center',
-    alignSelf: 'center',
-    color: COLORS.TEXT,
-    fontSize: FONTS.SIZE.REGULAR,
-    fontFamily: 'Monserrat-Regular',
-    padding: 30,
-  },
-});

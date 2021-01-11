@@ -17,8 +17,10 @@ export const SIGN_IN = async ({first_name, last_name, email, age}) =>
     },
   });
 
-export const GET_BOOKS = async ({textSearch}) =>
-  Service(`/books?q=${textSearch}`);
+export const GET_BOOKS = async () => Service('/books');
+
+export const GET_BOOKS_BY_SEARCH = async ({search}) =>
+  Service(`/books?q=${search}`);
 
 export const GET_BOOKS_BY_GENRE = async ({genre}) =>
   Service(`/books?genre=${genre}`);

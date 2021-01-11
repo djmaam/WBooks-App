@@ -1,0 +1,65 @@
+import {StyleSheet} from 'react-native';
+import {COLORS, FONTS} from '../../Configs/constants';
+
+export const styles = StyleSheet.create({
+  containedButtonContainer: {
+    width: '80%',
+    height: 45,
+    marginVertical: 10,
+    backgroundColor: COLORS.PRIMARY,
+    borderRadius: 50,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+  },
+  containedButtonText: {
+    color: COLORS.WHITE,
+    fontWeight: FONTS.WEIGHT.BOLD,
+    fontSize: FONTS.SIZE.MEDIUM,
+    alignSelf: 'center',
+    textTransform: 'uppercase',
+  },
+  outlinedButtonContainer: {
+    width: '80%',
+    height: 45,
+    marginVertical: 10,
+    backgroundColor: COLORS.WHITE,
+    borderRadius: 50,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    borderWidth: 2,
+    borderColor: COLORS.PRIMARY,
+  },
+  outlinedButtonText: {
+    color: COLORS.PRIMARY,
+    fontWeight: FONTS.WEIGHT.BOLD,
+    fontSize: FONTS.SIZE.MEDIUM,
+    alignSelf: 'center',
+    textTransform: 'uppercase',
+  },
+  signInButtonContainer: {
+    width: '94%',
+    marginVertical: 10,
+    backgroundColor: COLORS.WHITE,
+    borderRadius: 50,
+    paddingVertical: 15,
+    paddingHorizontal: 12,
+  },
+  signInButtonText: {
+    color: COLORS.PRIMARY,
+    fontWeight: FONTS.WEIGHT.BOLD,
+    fontSize: FONTS.SIZE.REGULAR,
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textTransform: 'uppercase',
+  },
+  signInButtonTextDisabled: {
+    color: COLORS.INACTIVE,
+    fontWeight: FONTS.WEIGHT.BOLD,
+    fontSize: FONTS.SIZE.REGULAR,
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textTransform: 'uppercase',
+  },
+});

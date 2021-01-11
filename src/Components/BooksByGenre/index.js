@@ -1,6 +1,7 @@
 import React from 'react';
-import {StyleSheet, TouchableOpacity, View, Image, Text} from 'react-native';
-import {FONTS} from '../../Configs/constants';
+import {TouchableOpacity, View, Image, Text} from 'react-native';
+
+import {styles} from './styles';
 
 export default function BooksByGenre(props) {
   return (
@@ -25,33 +26,3 @@ export default function BooksByGenre(props) {
     </TouchableOpacity>
   );
 }
-
-const styles = StyleSheet.create({
-  cardContainer: {
-    margin: 5,
-    backgroundColor: 'white',
-    width: 160,
-    height: 220,
-    borderRadius: 12,
-    elevation: 2,
-    justifyContent: 'center',
-    alignContent: 'center',
-    alignItems: 'center',
-  },
-  image: {
-    resizeMode: 'contain',
-    height: 130,
-    marginTop: 15,
-  },
-  textContainer: {
-    marginHorizontal: 10,
-    marginVertical: 5,
-  },
-  textTitle: {
-    textAlign: 'center',
-    fontWeight: FONTS.WEIGHT.BOLD,
-  },
-  textSubTitle: {
-    textAlign: 'center',
-  },
-});

@@ -1,5 +1,7 @@
 import React from 'react';
-import {StyleSheet, View, Image, ImageBackground} from 'react-native';
+import {View, Image, ImageBackground} from 'react-native';
+
+import {styles} from './styles';
 
 export default function SplashScreen() {
   const background = require('../../Assets/General/bc_inicio.png');
@@ -14,15 +16,3 @@ export default function SplashScreen() {
     </ImageBackground>
   );
 }
-
-const styles = StyleSheet.create({
-  section: {
-    alignContent: 'center',
-    alignItems: 'center',
-  },
-  background: {
-    flex: 1,
-    resizeMode: 'cover',
-    justifyContent: 'center',
-  },
-});

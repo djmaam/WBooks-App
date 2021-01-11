@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import {SafeAreaView, FlatList, StyleSheet} from 'react-native';
+import {SafeAreaView, FlatList} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 import {GET_BOOKS_BY_GENRE} from '../../Services';
 import BookCardDetails from '../../Components/BookCardDetails';
 import BooksByGenre from '../../Components/BooksByGenre';
+
+import {styles} from './styles';
 
 export default function BookDetailScreen(props) {
   const navigation = useNavigation();
@@ -48,8 +50,3 @@ export default function BookDetailScreen(props) {
     </SafeAreaView>
   );
 }
-const styles = StyleSheet.create({
-  container: {
-    marginTop: 60,
-  },
-});

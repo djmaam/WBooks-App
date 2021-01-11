@@ -1,12 +1,14 @@
 import React, {useState, useContext} from 'react';
 import {View, Text, ImageBackground, Image, Alert} from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
-import styles from './styles';
+
 import {FormInput, FormPicker} from '../../Components/FormInputs';
 import {SignInButton} from '../../Components/FormButtons';
 import {AuthContext} from '../../Routers/index';
 import {validateEmail} from '../../Utils/Validations';
 import {COLORS} from '../../Configs/constants';
+
+import {styles} from './styles';
 
 const background = require('../../Assets/General/bc_inicio.png');
 

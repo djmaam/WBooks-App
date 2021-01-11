@@ -1,8 +1,10 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {View, Text} from 'react-native';
+
 import {ContainedButton} from '../../Components/FormButtons';
 import {AuthContext} from '../../Routers/index';
-import {COLORS, FONTS} from '../../Configs/constants';
+
+import {styles} from './styles';
 
 export default function SettingsScreen() {
   const {authContext, userdata} = React.useContext(AuthContext);
@@ -16,23 +18,3 @@ export default function SettingsScreen() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: '4%',
-    marginTop: 50,
-    alignItems: 'center',
-  },
-  activityIndicator: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-  text: {
-    marginTop: 15,
-    color: COLORS.TEXT,
-    fontWeight: FONTS.WEIGHT.BOLD,
-    fontSize: FONTS.SIZE.H3,
-    fontFamily: 'Montserrat-Regular',
-  },
-});

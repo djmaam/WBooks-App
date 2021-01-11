@@ -1,7 +1,8 @@
 import React from 'react';
-import {TextInput, StyleSheet} from 'react-native';
+import {TextInput} from 'react-native';
 import {Picker} from '@react-native-picker/picker';
-import {COLORS} from '../../Configs/constants';
+
+import {styles} from './styles';
 
 export function FormInput(props) {
   return (
@@ -58,19 +59,3 @@ export function SearchInput(props) {
     />
   );
 }
-
-const styles = StyleSheet.create({
-  textInput: {
-    borderBottomColor: 'blue',
-    borderBottomWidth: 1,
-    width: '100%',
-    height: 52,
-    marginVertical: 10,
-  },
-  picker: {
-    color: COLORS.TEXT,
-    borderBottomColor: 'blue',
-    borderBottomWidth: 1,
-    textAlign: 'center',
-  },
-});

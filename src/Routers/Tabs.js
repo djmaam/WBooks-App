@@ -1,6 +1,18 @@
 import React from 'react';
-import {Image, StyleSheet} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+
+import {
+  LibraryIcon,
+  LibraryActiveIcon,
+  WishlistIcon,
+  WishlistActiveIcon,
+  AddNewIcon,
+  AddNewActiveIcon,
+  RentalsIcon,
+  RentalsActiveIcon,
+  SettingsIcon,
+  SettingsActiveIcon,
+} from '../Components/Tabs';
 
 import LibraryStackScreen from './HomeStack';
 import WishlistStackScreen from './WishlistStack';
@@ -24,19 +36,7 @@ export default function TabsScreen() {
         component={LibraryStackScreen}
         options={{
           tabBarIcon: ({focused}) => {
-            return focused ? (
-              <Image
-                style={styles.image}
-                source={require('../Assets/ToolBar/ic_library_active.png')}
-                resizeMode="contain"
-              />
-            ) : (
-              <Image
-                style={styles.image}
-                source={require('../Assets/ToolBar/ic_library.png')}
-                resizeMode="contain"
-              />
-            );
+            return focused ? <LibraryActiveIcon /> : <LibraryIcon />;
           },
         }}
       />
@@ -45,19 +45,7 @@ export default function TabsScreen() {
         component={WishlistStackScreen}
         options={{
           tabBarIcon: ({focused}) => {
-            return focused ? (
-              <Image
-                style={styles.image}
-                source={require('../Assets/ToolBar/ic_wishlist_active.png')}
-                resizeMode="contain"
-              />
-            ) : (
-              <Image
-                style={styles.image}
-                source={require('../Assets/ToolBar/ic_wishlist.png')}
-                resizeMode="contain"
-              />
-            );
+            return focused ? <WishlistActiveIcon /> : <WishlistIcon />;
           },
         }}
       />
@@ -66,19 +54,7 @@ export default function TabsScreen() {
         component={AddNewStackScreen}
         options={{
           tabBarIcon: ({focused}) => {
-            return focused ? (
-              <Image
-                style={styles.image}
-                source={require('../Assets/ToolBar/ic_add_new_active.png')}
-                resizeMode="contain"
-              />
-            ) : (
-              <Image
-                style={styles.image}
-                source={require('../Assets/ToolBar/ic_add_new.png')}
-                resizeMode="contain"
-              />
-            );
+            return focused ? <AddNewActiveIcon /> : <AddNewIcon />;
           },
         }}
       />
@@ -87,19 +63,7 @@ export default function TabsScreen() {
         component={RentalsStackScreen}
         options={{
           tabBarIcon: ({focused}) => {
-            return focused ? (
-              <Image
-                style={styles.image}
-                source={require('../Assets/ToolBar/ic_myrentals_active.png')}
-                resizeMode="contain"
-              />
-            ) : (
-              <Image
-                style={styles.image}
-                source={require('../Assets/ToolBar/ic_myrentals.png')}
-                resizeMode="contain"
-              />
-            );
+            return focused ? <RentalsActiveIcon /> : <RentalsIcon />;
           },
         }}
       />
@@ -108,29 +72,10 @@ export default function TabsScreen() {
         component={SettingsStackScreen}
         options={{
           tabBarIcon: ({focused}) => {
-            return focused ? (
-              <Image
-                style={styles.image}
-                source={require('../Assets/ToolBar/ic_settings_active.png')}
-                resizeMode="contain"
-              />
-            ) : (
-              <Image
-                style={styles.image}
-                source={require('../Assets/ToolBar/ic_settings.png')}
-                resizeMode="contain"
-              />
-            );
+            return focused ? <SettingsActiveIcon /> : <SettingsIcon />;
           },
         }}
       />
     </Tabs.Navigator>
   );
 }
-
-const styles = StyleSheet.create({
-  image: {
-    width: 30,
-    height: 30,
-  },
-});
