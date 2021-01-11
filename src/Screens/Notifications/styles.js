@@ -9,6 +9,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'center',
+    backgroundColor: COLORS.BACKGROUND,
   },
   text: {
     marginTop: 15,

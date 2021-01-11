@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     marginTop: 50,
     alignItems: 'center',
     justifyContent: 'center',
-    alignSelf: 'center',
+    backgroundColor: COLORS.BACKGROUND,
   },
   text: {
     marginTop: 15,

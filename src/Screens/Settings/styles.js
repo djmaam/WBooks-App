@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
     padding: '4%',
     marginTop: 50,
     alignItems: 'center',
+    backgroundColor: COLORS.BACKGROUND,
   },
   activityIndicator: {
     flex: 1,

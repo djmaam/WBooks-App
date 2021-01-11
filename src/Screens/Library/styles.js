@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     padding: '4%',
     marginTop: 50,
+    backgroundColor: COLORS.BACKGROUND,
   },
   activityIndicator: {
     flex: 1,
