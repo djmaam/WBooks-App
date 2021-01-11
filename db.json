@@ -49,6 +49,13 @@
       "email": "marcosarrietaarg@gmail.com",
       "age": "22",
       "id": 10
+    },
+    {
+      "first_name": "Marcos",
+      "last_name": "Arrieta",
+      "email": "marcosarrietaarg@gmail.com",
+      "age": "22",
+      "id": 11
     }
   ],
   "books": [

@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
   },
   text: {
     marginTop: 15,
+    marginLeft: '15%',
     color: COLORS.TEXT,
     fontWeight: FONTS.WEIGHT.BOLD,
     fontSize: FONTS.SIZE.H3,

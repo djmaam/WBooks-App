@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
   },
   signInButtonContainer: {
-    width: '95%',
+    width: '94%',
     marginVertical: 10,
     backgroundColor: COLORS.WHITE,
     borderRadius: 50,

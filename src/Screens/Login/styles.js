@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
     marginLeft: 25,
   },
   textTyc: {
+    marginBottom: 10,
     paddingTop: 6,
     color: COLORS.WHITE,
     fontSize: FONTS.SIZE.REGULAR,
