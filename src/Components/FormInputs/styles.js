@@ -3,7 +3,7 @@ import {COLORS} from '../../Configs/constants';
 
 export const styles = StyleSheet.create({
   textInput: {
-    borderBottomColor: 'blue',
+    borderBottomColor: COLORS.BLUE,
     borderBottomWidth: 1,
     width: '100%',
     height: 52,
@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
   },
   picker: {
     color: COLORS.TEXT,
-    borderBottomColor: 'blue',
+    borderBottomColor: COLORS.BLUE,
     borderBottomWidth: 1,
     textAlign: 'center',
   },

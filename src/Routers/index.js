@@ -53,7 +53,8 @@ export default function Providers() {
 
   const authContext = useMemo(() => {
     return {
-      signIn: async (first_name, last_name, email, age) => {
+      signIn: async (values) => {
+        let {first_name, last_name, email, age} = values;
         try {
           const {data} = await Service.SIGN_IN({
             first_name,

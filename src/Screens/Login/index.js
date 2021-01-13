@@ -1,49 +1,75 @@
 import React, {useState, useContext} from 'react';
-import {View, Text, ImageBackground, Image, Alert} from 'react-native';
+import {View, Text, ImageBackground, Image} from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
+import {useFormik} from 'formik';
+import * as Yup from 'yup';
 
 import {FormInput, FormPicker} from '../../Components/FormInputs';
 import {SignInButton} from '../../Components/FormButtons';
+import {ErrorModal} from '../../Components/ErrorModal';
 import {AuthContext} from '../../Routers/index';
-import {validateEmail} from '../../Utils/Validations';
 import {COLORS} from '../../Configs/constants';
 
 import {styles} from './styles';
 
 const background = require('../../Assets/General/bc_inicio.png');
 
-export default function LoginScreen(props) {
-  const [first_name, setFirstName] = useState('');
-  const [last_name, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [age, setAge] = useState('');
-  const [tyc, setTyc] = useState(false);
+const LoginSchema = Yup.object().shape({
+  first_name: Yup.string().min(2, 'First name too short!').required('Required'),
+  last_name: Yup.string().min(2, 'Last name too short!').required('Required'),
+  email: Yup.string().email('The email is not valid!').required('Required'),
+  age: Yup.string().required('Required!'),
+  tyc: Yup.bool().oneOf(
+    [true],
+    'To sign in it is necessary that you first accept the terms and conditions.',
+  ),
+});
+
+export default function LoginScreen() {
+  const [error, setError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const {authContext} = useContext(AuthContext);
   const {signIn} = authContext;
 
-  const handleLogin = () => {
-    if (tyc) {
-      if (!validateEmail(email)) {
-        Alert.alert('Ooops...', 'The email is not valid.', [{text: 'OK'}], {
-          cancelable: true,
-        });
-        return false;
-      } else {
-        signIn(first_name, last_name, email, age);
-      }
-    } else {
-      Alert.alert(
-        'Hey, you!',
-        'To sign in it is necessary that you first accept the terms and conditions.',
-        [{text: 'OK'}],
-        {cancelable: true},
-      );
-    }
-  };
+  const {
+    values,
+    handleSubmit,
+    handleChange,
+    handleBlur,
+    setFieldValue,
+    isSubmitting,
+    errors,
+  } = useFormik({
+    validationSchema: LoginSchema,
+    validateOnBlur: false,
+    validateOnChange: false,
+    initialValues: {
+      first_name: '',
+      last_name: '',
+      email: '',
+      age: '',
+      tyc: false,
+    },
+    onSubmit: async (values) => {
+      setIsLoading(true);
+
+      await signIn(values);
+
+      setIsLoading(false);
+    },
+  });
 
   return (
     <ImageBackground source={background} style={styles.image}>
       <View style={styles.container}>
+        {Object.keys(errors).length > 0 && (
+          <ErrorModal
+            errors={errors}
+            isVisible={error}
+            setIsVisible={setError}
+            isSubmitting={isSubmitting}
+          />
+        )}
         <View style={styles.section}>
           <Image source={require('../../Assets/General/ic_group.png')} />
         </View>
@@ -55,8 +81,9 @@ export default function LoginScreen(props) {
               label={'first_name'}
               placeholder={'First name'}
               keyboardType={'default'}
-              value={first_name}
-              onChangeText={(value) => setFirstName(value)}
+              value={values.first_name}
+              onChangeText={handleChange('first_name')}
+              onBlur={handleBlur('first_name')}
               style={styles.inputForm}
             />
             <FormInput
@@ -65,8 +92,9 @@ export default function LoginScreen(props) {
               label={'last_name'}
               placeholder={'Last name'}
               keyboardType={'default'}
-              value={last_name}
-              onChangeText={(value) => setLastName(value)}
+              value={values.last_name}
+              onChangeText={handleChange('last_name')}
+              onBlur={handleBlur('last_name')}
               style={styles.inputForm}
             />
           </View>
@@ -77,22 +105,23 @@ export default function LoginScreen(props) {
             label={'email'}
             placeholder={'Email'}
             keyboardType={'email-address'}
-            value={email}
-            onChangeText={(value) => setEmail(value)}
+            value={values.email}
+            onChangeText={handleChange('email')}
+            onBlur={handleBlur('email')}
             style={styles.fullInputForm}
           />
           <View style={styles.inputContainer}>
             <View style={styles.inputPicker}>
               <FormPicker
-                selectedValue={age}
-                onValueChange={(value) => setAge(value)}
+                selectedValue={values.age}
+                onValueChange={handleChange('age')}
               />
             </View>
           </View>
           <View style={styles.checkboxContainer}>
             <CheckBox
-              value={tyc}
-              onValueChange={setTyc}
+              value={values.tyc}
+              onValueChange={(checked) => setFieldValue('tyc', checked)}
               tintColors={{true: COLORS.WHITE, false: COLORS.WHITE}}
             />
             <Text style={styles.textTyc}>
@@ -101,18 +130,19 @@ export default function LoginScreen(props) {
           </View>
           <SignInButton
             disabled={
-              first_name === ''
+              values.first_name === ''
                 ? true
-                : last_name === ''
+                : values.last_name === ''
                 ? true
-                : email === ''
+                : values.email === ''
                 ? true
-                : age === ''
+                : values.age === 'Age'
                 ? true
                 : false
             }
             label={'SIGN IN'}
-            onPress={() => handleLogin(first_name, last_name, email, age)}
+            onPress={handleSubmit}
+            isLoading={isLoading}
           />
         </View>
       </View>

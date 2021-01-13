@@ -1,5 +1,7 @@
 import React from 'react';
-import {TouchableOpacity, Text} from 'react-native';
+import {TouchableOpacity, Text, ActivityIndicator} from 'react-native';
+
+import {COLORS} from '../../Configs/constants';
 
 import {styles} from './styles';
 
@@ -29,14 +31,18 @@ export function SignInButton(props) {
       disabled={props.disabled}
       style={styles.signInButtonContainer}
       onPress={props.onPress}>
-      <Text
-        style={
-          !props.disabled
-            ? styles.signInButtonText
-            : styles.signInButtonTextDisabled
-        }>
-        {props.label}
-      </Text>
+      {props.isLoading === true ? (
+        <ActivityIndicator size="large" color={COLORS.PRIMARY} />
+      ) : (
+        <Text
+          style={
+            !props.disabled
+              ? styles.signInButtonText
+              : styles.signInButtonTextDisabled
+          }>
+          {props.label}
+        </Text>
+      )}
     </TouchableOpacity>
   );
 }

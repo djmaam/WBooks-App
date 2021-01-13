@@ -3,6 +3,10 @@ export const COLORS = {
   TEXT: '#5C5C5C',
   PRIMARY: '#04ACEC',
   WHITE: 'white',
+  GREY: 'grey',
+  BLUE: 'blue',
+  BLACK: 'black',
+  ERROR: '#FF5A5F',
   AVAILABLE: '#B3CA6F',
   INACTIVE: '#CCD4D4',
 };
