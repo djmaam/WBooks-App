@@ -13,7 +13,6 @@ export const styles = StyleSheet.create({
   text: {
     marginTop: 15,
     color: COLORS.TEXT,
-    fontWeight: FONTS.WEIGHT.BOLD,
     fontSize: FONTS.SIZE.H3,
     fontFamily: 'Montserrat-Regular',
   },

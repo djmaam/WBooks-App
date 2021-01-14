@@ -1,10 +1,10 @@
 import {StyleSheet} from 'react-native';
-import {FONTS} from '../../Configs/constants';
+import {COLORS, FONTS} from '../../Configs/constants';
 
 export const styles = StyleSheet.create({
   cardContainer: {
     margin: 5,
-    backgroundColor: 'white',
+    backgroundColor: COLORS.WHITE,
     width: 160,
     height: 200,
     borderRadius: 12,
@@ -24,9 +24,6 @@ export const styles = StyleSheet.create({
   },
   textTitle: {
     textAlign: 'center',
-    fontWeight: FONTS.WEIGHT.BOLD,
-  },
-  textSubTitle: {
-    textAlign: 'center',
+    fontFamily: 'Montserrat-Regular',
   },
 });

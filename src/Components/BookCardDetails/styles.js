@@ -4,7 +4,7 @@ import {COLORS, FONTS} from '../../Configs/constants';
 export const styles = StyleSheet.create({
   cardContainer: {
     margin: '2%',
-    backgroundColor: 'white',
+    backgroundColor: COLORS.WHITE,
     width: '95%',
     height: 340,
     borderRadius: 12,
@@ -40,16 +40,17 @@ export const styles = StyleSheet.create({
   },
   availability: {
     color: COLORS.AVAILABLE,
-    fontWeight: FONTS.WEIGHT.BOLD,
+    fontFamily: 'Montserrat-Bold',
   },
   textTitle: {
     color: COLORS.TEXT,
-    fontWeight: FONTS.WEIGHT.BOLD,
     fontSize: FONTS.SIZE.H2,
-    marginEnd: 180,
+    marginEnd: 130,
+    fontFamily: 'Montserrat-Bold',
   },
   textOther: {
     color: COLORS.TEXT,
     fontSize: FONTS.SIZE.REGULAR,
+    fontFamily: 'Montserrat-Regular',
   },
 });

@@ -8,11 +8,15 @@ export const styles = StyleSheet.create({
     width: '100%',
     height: 52,
     marginVertical: 10,
+    fontFamily: 'Montserrat-Regular',
   },
   picker: {
     color: COLORS.TEXT,
     borderBottomColor: COLORS.BLUE,
     borderBottomWidth: 1,
-    textAlign: 'center',
+  },
+  textPicker: {
+    color: COLORS.TEXT,
+    fontFamily: 'Montserrat-Regular',
   },
 });

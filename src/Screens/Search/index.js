@@ -4,7 +4,7 @@ import {useNavigation} from '@react-navigation/native';
 
 import {SearchInput} from '../../Components/FormInputs';
 import BookCard from '../../Components/BookCard';
-import {COLORS} from '../../Configs/constants';
+import {COLORS, FONTS} from '../../Configs/constants';
 import {GET_BOOKS_BY_SEARCH} from '../../Services';
 
 import {styles} from './styles';
@@ -25,6 +25,7 @@ export default function SearchScreen() {
   }, [search]);
 
   const getBooks = async () => {
+    setIsLoading(true);
     try {
       const {data} = await GET_BOOKS_BY_SEARCH({search});
       console.log('GET_BOOKS DATA: ', data);
@@ -38,13 +39,30 @@ export default function SearchScreen() {
     }
   };
 
-  if (isLoading) {
+  const renderEmpty = () => {
     return (
-      <View style={styles.activityIndicator}>
-        <ActivityIndicator size="large" color={COLORS.PRIMARY} />
+      <View style={styles.errorMsg}>
+        <Text style={styles.textError}>
+          {isLoading
+            ? ''
+            : search.length > 0
+            ? 'Sorry... we did not find anything related'
+            : 'Please... type something to find awesome books!'}
+        </Text>
       </View>
     );
-  }
+  };
+
+  const renderFooter = () => {
+    return (
+      <View style={styles.activityIndicator}>
+        {isLoading ? (
+          <ActivityIndicator size="large" color={COLORS.PRIMARY} />
+        ) : null}
+      </View>
+    );
+  };
+
   if (error) {
     return (
       <View style={styles.errorMsg}>
@@ -55,22 +73,13 @@ export default function SearchScreen() {
     );
   }
 
-  const renderEmpty = () => {
-    return (
-      <View style={styles.errorMsg}>
-        <Text style={styles.textError}>
-          Please... type something to find awesome books!
-        </Text>
-      </View>
-    );
-  };
-
   return (
     <View style={styles.container}>
       <SearchInput
         style={styles.searchBar}
         placeholder={'Search your favorite book here...'}
         placeholderTextColor={COLORS.WHITE}
+        placeholderStyle={styles.placeholder}
         value={search}
         onChangeText={(value) => setSearch(value)}
       />
@@ -87,6 +96,8 @@ export default function SearchScreen() {
         showsVerticalScrollIndicator={false}
         keyExtractor={(item) => item.id.toString()}
         ListEmptyComponent={renderEmpty}
+        ListFooterComponent={renderFooter}
+        refreshing={isLoading}
       />
     </View>
   );

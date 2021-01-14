@@ -19,7 +19,11 @@ export default function WishlistStackScreen() {
           title: 'WISHLIST',
           headerTintColor: COLORS.WHITE,
           headerBackground: (props) => <HeaderBackground />,
-          headerTitleStyle: {flex: 1, textAlign: 'center'},
+          headerTitleStyle: {
+            flex: 1,
+            textAlign: 'center',
+            fontFamily: 'Montserrat-Regular',
+          },
         }}
       />
     </WishlistStack.Navigator>

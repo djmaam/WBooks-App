@@ -25,6 +25,7 @@ export default function LibraryStackScreen() {
         name="Main"
         component={LibraryScreen}
         options={({navigation}) => ({
+          gestureEnabled: false,
           title: 'LIBRARY',
           headerTintColor: COLORS.WHITE,
           headerBackground: (props) => <HeaderBackground />,
@@ -36,7 +37,11 @@ export default function LibraryStackScreen() {
           headerRight: () => (
             <SearchIcon onPress={() => navigation.navigate('Search')} />
           ),
-          headerTitleStyle: {flex: 1, textAlign: 'center'},
+          headerTitleStyle: {
+            flex: 1,
+            textAlign: 'center',
+            fontFamily: 'Montserrat-Regular',
+          },
         })}
       />
       <HomeStack.Screen
@@ -48,7 +53,11 @@ export default function LibraryStackScreen() {
           headerBackground: (props) => <HeaderBackground />,
           headerLeft: () => <GoBackIcon onPress={() => navigation.goBack()} />,
           headerRight: () => <RatingActiveIcon />,
-          headerTitleStyle: {flex: 1, textAlign: 'center'},
+          headerTitleStyle: {
+            flex: 1,
+            textAlign: 'center',
+            fontFamily: 'Montserrat-Regular',
+          },
         })}
       />
       <HomeStack.Screen
@@ -60,7 +69,11 @@ export default function LibraryStackScreen() {
           headerBackground: (props) => <HeaderBackground />,
           headerLeft: () => <GoBackIcon onPress={() => navigation.goBack()} />,
           headerRight: () => <RatingActiveIcon />,
-          headerTitleStyle: {flex: 1, textAlign: 'center'},
+          headerTitleStyle: {
+            flex: 1,
+            textAlign: 'center',
+            fontFamily: 'Montserrat-Regular',
+          },
         })}
       />
       <HomeStack.Screen
@@ -72,7 +85,11 @@ export default function LibraryStackScreen() {
           headerBackground: (props) => <HeaderBackground />,
           headerLeft: () => <GoBackIcon onPress={() => navigation.goBack()} />,
           headerRight: () => <RatingActiveIcon />,
-          headerTitleStyle: {flex: 1, textAlign: 'center'},
+          headerTitleStyle: {
+            flex: 1,
+            textAlign: 'center',
+            fontFamily: 'Montserrat-Regular',
+          },
         })}
       />
     </HomeStack.Navigator>

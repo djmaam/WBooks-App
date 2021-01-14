@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
   },
   cardContainer: {
     margin: '2%',
-    backgroundColor: 'white',
+    backgroundColor: COLORS.WHITE,
     width: '96%',
     height: 125,
     borderRadius: 12,
@@ -36,9 +36,8 @@ export const styles = StyleSheet.create({
   },
   textTitle: {
     color: COLORS.TEXT,
-    fontWeight: FONTS.WEIGHT.BOLD,
     fontSize: FONTS.SIZE.H3,
-    fontFamily: 'Montserrat-Regular',
+    fontFamily: 'Montserrat-Bold',
   },
   textSubTitle: {
     color: COLORS.TEXT,

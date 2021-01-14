@@ -13,10 +13,10 @@ export const styles = StyleSheet.create({
   },
   containedButtonText: {
     color: COLORS.WHITE,
-    fontWeight: FONTS.WEIGHT.BOLD,
     fontSize: FONTS.SIZE.MEDIUM,
     alignSelf: 'center',
     textTransform: 'uppercase',
+    fontFamily: 'Montserrat-Bold',
   },
   outlinedButtonContainer: {
     width: '80%',
@@ -31,10 +31,10 @@ export const styles = StyleSheet.create({
   },
   outlinedButtonText: {
     color: COLORS.PRIMARY,
-    fontWeight: FONTS.WEIGHT.BOLD,
     fontSize: FONTS.SIZE.MEDIUM,
     alignSelf: 'center',
     textTransform: 'uppercase',
+    fontFamily: 'Montserrat-Bold',
   },
   signInButtonContainer: {
     width: '94%',
@@ -46,20 +46,20 @@ export const styles = StyleSheet.create({
   },
   signInButtonText: {
     color: COLORS.PRIMARY,
-    fontWeight: FONTS.WEIGHT.BOLD,
     fontSize: FONTS.SIZE.REGULAR,
     alignSelf: 'center',
     alignItems: 'center',
     justifyContent: 'center',
     textTransform: 'uppercase',
+    fontFamily: 'Montserrat-Regular',
   },
   signInButtonTextDisabled: {
     color: COLORS.INACTIVE,
-    fontWeight: FONTS.WEIGHT.BOLD,
     fontSize: FONTS.SIZE.REGULAR,
     alignSelf: 'center',
     alignItems: 'center',
     justifyContent: 'center',
     textTransform: 'uppercase',
+    fontFamily: 'Montserrat-Regular',
   },
 });

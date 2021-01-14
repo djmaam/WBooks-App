@@ -64,6 +64,8 @@ export default function LibraryScreen(props) {
         )}
         showsVerticalScrollIndicator={false}
         keyExtractor={(item) => item.id.toString()}
+        refreshing={isLoading}
+        onRefresh={getBooks}
       />
     </View>
   );

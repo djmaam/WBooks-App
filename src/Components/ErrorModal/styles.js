@@ -32,11 +32,12 @@ export const styles = StyleSheet.create({
   },
   closeText: {
     color: COLORS.WHITE,
-    fontWeight: FONTS.WEIGHT.BOLD,
     textAlign: 'center',
+    fontFamily: 'Montserrat-Bold',
   },
   modalText: {
     marginBottom: 15,
     textAlign: 'center',
+    fontFamily: 'Montserrat-Regular',
   },
 });

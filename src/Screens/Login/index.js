@@ -112,6 +112,14 @@ export default function LoginScreen() {
             style={styles.fullInputForm}
           />
           <View style={styles.inputContainer}>
+            <FormInput
+              placeholderTextColor={COLORS.TEXT}
+              editable={false}
+              type={'age'}
+              label={'age'}
+              placeholder={'Age'}
+              style={styles.pickerLabel}
+            />
             <View style={styles.inputPicker}>
               <FormPicker
                 selectedValue={values.age}

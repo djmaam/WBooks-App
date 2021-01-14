@@ -15,6 +15,7 @@ export const styles = StyleSheet.create({
   errorMsg: {
     flex: 1,
     justifyContent: 'center',
+    fontFamily: 'Montserrat-Regular',
   },
   textError: {
     color: COLORS.TEXT,

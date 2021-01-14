@@ -30,6 +30,11 @@ export default function TabsScreen() {
       tabBarOptions={{
         activeTintColor: COLORS.PRIMARY,
         inactiveTintColor: COLORS.INACTIVE,
+        labelStyle: {
+          fontSize: 12,
+          fontFamily: 'Montserrat-Regular',
+          marginBottom: 1,
+        },
       }}>
       <Tabs.Screen
         name="Library"

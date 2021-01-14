@@ -1,69 +1,5 @@
 {
   "sign_in": [
-    {
-      "id": 1
-    },
-    {
-      "id": 2
-    },
-    {
-      "id": 3
-    },
-    {
-      "id": 4
-    },
-    {
-      "id": 5
-    },
-    {
-      "first_name": "Marcos",
-      "last_name": "Arrieta",
-      "email": "marcosarrietaarg@gmail.com",
-      "age": "22",
-      "id": 6
-    },
-    {
-      "first_name": "Marcos",
-      "last_name": "Arrieta",
-      "email": "marcosarrietaarg@gmail.com",
-      "age": "22",
-      "id": 7
-    },
-    {
-      "first_name": "Marcos",
-      "last_name": "Arrieta",
-      "email": "marcosarrietaarg@gmail.com",
-      "age": "22",
-      "id": 8
-    },
-    {
-      "first_name": "Marcos",
-      "last_name": "Arrieta",
-      "email": "marcosarrietaarg@gmail.com",
-      "age": "22",
-      "id": 9
-    },
-    {
-      "first_name": "Marcos",
-      "last_name": "Arrieta",
-      "email": "marcosarrietaarg@gmail.com",
-      "age": "22",
-      "id": 10
-    },
-    {
-      "first_name": "Marcos",
-      "last_name": "Arrieta",
-      "email": "marcosarrietaarg@gmail.com",
-      "age": "22",
-      "id": 11
-    },
-    {
-      "first_name": "Marcos",
-      "last_name": "Arrieta",
-      "email": "marcosarrietaarg@gmail.com",
-      "age": "22",
-      "id": 12
-    }
   ],
   "books": [
     {
@@ -114,7 +50,7 @@
     {
       "id": 6,
       "author": "Paula Hawkins",
-      "title": "The Girl on the Train\n",
+      "title": "The Girl on the Train",
       "genre": "suspense",
       "publisher": "Riverhead Books",
       "year": "2015",

@@ -31,7 +31,8 @@ export function FormPicker(props) {
     <Picker
       selectedValue={props.selectedValue}
       onValueChange={props.onValueChange}
-      style={styles.picker}>
+      style={styles.picker}
+      itemStyle={styles.textPicker}>
       {Ages.map((age) => (
         <Picker.Item
           key={age.id}
@@ -50,6 +51,7 @@ export function SearchInput(props) {
       style={props.style}
       placeholder={props.placeholder}
       placeholderTextColor={props.placeholderTextColor}
+      placeholderStyle={props.placeholderStyle}
       type={props.type}
       label={props.label}
       value={props.value}

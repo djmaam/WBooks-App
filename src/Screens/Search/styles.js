@@ -25,10 +25,13 @@ export const styles = StyleSheet.create({
     },
     shadowOpacity: 0.34,
     shadowRadius: 6.27,
+    textAlign: 'center',
+    fontFamily: 'Montserrat-Regular',
   },
   errorMsg: {
     flex: 1,
     justifyContent: 'center',
+    fontFamily: 'Monserrat-Regular',
   },
   textError: {
     justifyContent: 'center',
@@ -38,5 +41,13 @@ export const styles = StyleSheet.create({
     fontSize: FONTS.SIZE.REGULAR,
     fontFamily: 'Monserrat-Regular',
     padding: 30,
+  },
+  textEmpty: {
+    fontSize: FONTS.SIZE.REGULAR,
+    fontFamily: 'Monserrat-Regular',
+  },
+  placeholder: {
+    fontSize: FONTS.SIZE.REGULAR,
+    fontFamily: 'Monserrat-Regular',
   },
 });
