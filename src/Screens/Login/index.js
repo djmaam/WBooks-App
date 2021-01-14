@@ -13,6 +13,7 @@ import {COLORS} from '../../Configs/constants';
 import {styles} from './styles';
 
 const background = require('../../Assets/General/bc_inicio.png');
+const logo = require('../../Assets/General/ic_group.png');
 
 const LoginSchema = Yup.object().shape({
   first_name: Yup.string().min(2, 'First name too short!').required('Required'),
@@ -50,10 +51,10 @@ export default function LoginScreen() {
       age: '',
       tyc: false,
     },
-    onSubmit: async (values) => {
+    onSubmit: async (loginValues) => {
       setIsLoading(true);
 
-      await signIn(values);
+      await signIn(loginValues);
 
       setIsLoading(false);
     },
@@ -71,7 +72,7 @@ export default function LoginScreen() {
           />
         )}
         <View style={styles.section}>
-          <Image source={require('../../Assets/General/ic_group.png')} />
+          <Image source={logo} />
         </View>
         <View style={styles.form}>
           <View style={styles.inputContainer}>

@@ -7,11 +7,8 @@ export const styles = StyleSheet.create({
     padding: '4%',
     marginTop: 50,
     alignItems: 'center',
+    justifyContent: 'space-between',
     backgroundColor: COLORS.BACKGROUND,
-  },
-  activityIndicator: {
-    flex: 1,
-    justifyContent: 'center',
   },
   text: {
     marginTop: 15,

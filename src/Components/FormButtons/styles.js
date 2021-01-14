@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
   containedButtonContainer: {
     width: '80%',
     height: 45,
-    marginVertical: 10,
+    marginVertical: 6,
     backgroundColor: COLORS.PRIMARY,
     borderRadius: 50,
     paddingVertical: 10,
@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
   outlinedButtonContainer: {
     width: '80%',
     height: 45,
-    marginVertical: 10,
+    marginVertical: 6,
     backgroundColor: COLORS.WHITE,
     borderRadius: 50,
     paddingVertical: 10,
