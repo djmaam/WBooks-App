@@ -11,6 +11,13 @@ You must follow the instructions that have been shared to you to solve the exerc
 
 ### Good luck!
 
+![Splash Screen](./src/Assets/WBooks/Splash.jpg)
+![Login Screen](./src/Assets/WBooks/Login.jpg)
+![Library Screen](./src/Assets/WBooks/Library.jpg)
+![BookDetails Screen](./src/Assets/WBooks/Book-Details.jpg)
+![Wishlist Screen](./src/Assets/WBooks/Wishlist.jpg)
+![Settings Screen](./src/Assets/WBooks/Settings.jpg)
+
 ### Setting up Environtment
 
 To run the Local_API:
