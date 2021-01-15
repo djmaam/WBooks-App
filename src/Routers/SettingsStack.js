@@ -7,6 +7,8 @@ import SettingsScreen from '../Screens/Settings';
 
 import {COLORS} from '../Configs/constants';
 
+import I18n from '../Utils/I18n';
+
 const SettingsStack = createStackNavigator();
 
 export default function SettingsStackScreen() {
@@ -16,7 +18,7 @@ export default function SettingsStackScreen() {
         name="Settings"
         component={SettingsScreen}
         options={{
-          title: 'SETTINGS',
+          title: `${I18n.t('settings')}`,
           headerTintColor: COLORS.WHITE,
           headerBackground: (props) => <HeaderBackground />,
           headerTitleStyle: {

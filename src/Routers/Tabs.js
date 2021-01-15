@@ -22,6 +22,8 @@ import SettingsStackScreen from './SettingsStack';
 
 import {COLORS} from '../Configs/constants';
 
+import I18n from '../Utils/I18n';
+
 const Tabs = createBottomTabNavigator();
 
 export default function TabsScreen() {
@@ -37,7 +39,7 @@ export default function TabsScreen() {
         },
       }}>
       <Tabs.Screen
-        name="Library"
+        name={I18n.t('library_tabs')}
         component={LibraryStackScreen}
         options={{
           tabBarIcon: ({focused}) => {
@@ -46,7 +48,7 @@ export default function TabsScreen() {
         }}
       />
       <Tabs.Screen
-        name="Wishlist"
+        name={I18n.t('wishlist_tabs')}
         component={WishlistStackScreen}
         options={{
           tabBarIcon: ({focused}) => {
@@ -55,7 +57,7 @@ export default function TabsScreen() {
         }}
       />
       <Tabs.Screen
-        name="Add New"
+        name={I18n.t('add_new_tabs')}
         component={AddNewStackScreen}
         options={{
           tabBarIcon: ({focused}) => {
@@ -64,7 +66,7 @@ export default function TabsScreen() {
         }}
       />
       <Tabs.Screen
-        name="Rentals"
+        name={I18n.t('rentals_tabs')}
         component={RentalsStackScreen}
         options={{
           tabBarIcon: ({focused}) => {
@@ -73,7 +75,7 @@ export default function TabsScreen() {
         }}
       />
       <Tabs.Screen
-        name="Settings"
+        name={I18n.t('Settings_tabs')}
         component={SettingsStackScreen}
         options={{
           tabBarIcon: ({focused}) => {

@@ -7,16 +7,18 @@ import AddNewScreen from '../Screens/AddNew';
 
 import {COLORS} from '../Configs/constants';
 
+import I18n from '../Utils/I18n';
+
 const AddNewStack = createStackNavigator();
 
 export default function AddNewStackScreen() {
   return (
     <AddNewStack.Navigator>
       <AddNewStack.Screen
-        name="Whishlist"
+        name="AddNew"
         component={AddNewScreen}
         options={{
-          title: 'ADD NEW',
+          title: `${I18n.t('add_new')}`,
           headerTintColor: COLORS.WHITE,
           headerBackground: (props) => <HeaderBackground />,
           headerTitleStyle: {

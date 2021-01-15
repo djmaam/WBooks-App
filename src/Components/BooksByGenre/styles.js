@@ -4,6 +4,7 @@ import {COLORS, FONTS} from '../../Configs/constants';
 export const styles = StyleSheet.create({
   cardContainer: {
     margin: 5,
+    marginTop: 15,
     backgroundColor: COLORS.WHITE,
     width: 160,
     height: 200,

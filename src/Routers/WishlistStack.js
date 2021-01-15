@@ -7,6 +7,8 @@ import WishlistScreen from '../Screens/Whishlist';
 
 import {COLORS} from '../Configs/constants';
 
+import I18n from '../Utils/I18n';
+
 const WishlistStack = createStackNavigator();
 
 export default function WishlistStackScreen() {
@@ -16,7 +18,7 @@ export default function WishlistStackScreen() {
         name="Whishlist"
         component={WishlistScreen}
         options={{
-          title: 'WISHLIST',
+          title: `${I18n.t('wishlist')}`,
           headerTintColor: COLORS.WHITE,
           headerBackground: (props) => <HeaderBackground />,
           headerTitleStyle: {

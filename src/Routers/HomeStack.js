@@ -16,17 +16,19 @@ import NotificationsScreen from '../Screens/Notifications';
 
 import {COLORS} from '../Configs/constants';
 
+import I18n from '../Utils/I18n';
+
 const HomeStack = createStackNavigator();
 
 export default function LibraryStackScreen() {
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen
-        name="Main"
+        name="Library"
         component={LibraryScreen}
         options={({navigation}) => ({
           gestureEnabled: false,
-          title: 'LIBRARY',
+          title: `${I18n.t('library')}`,
           headerTintColor: COLORS.WHITE,
           headerBackground: (props) => <HeaderBackground />,
           headerLeft: () => (
@@ -48,7 +50,7 @@ export default function LibraryStackScreen() {
         name="BookDetail"
         component={BookDetailScreen}
         options={({navigation}) => ({
-          title: 'BOOK DETAILS',
+          title: `${I18n.t('book_details')}`,
           headerTintColor: COLORS.WHITE,
           headerBackground: (props) => <HeaderBackground />,
           headerLeft: () => <GoBackIcon onPress={() => navigation.goBack()} />,
@@ -64,7 +66,7 @@ export default function LibraryStackScreen() {
         name="Search"
         component={SearchScreen}
         options={({navigation}) => ({
-          title: 'SEARCH',
+          title: `${I18n.t('search')}`,
           headerTintColor: COLORS.WHITE,
           headerBackground: (props) => <HeaderBackground />,
           headerLeft: () => <GoBackIcon onPress={() => navigation.goBack()} />,
@@ -80,7 +82,7 @@ export default function LibraryStackScreen() {
         name="Notifications"
         component={NotificationsScreen}
         options={({navigation}) => ({
-          title: 'NOTIFICATIONS',
+          title: `${I18n.t('notifications')}`,
           headerTintColor: COLORS.WHITE,
           headerBackground: (props) => <HeaderBackground />,
           headerLeft: () => <GoBackIcon onPress={() => navigation.goBack()} />,

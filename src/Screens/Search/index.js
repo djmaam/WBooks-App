@@ -6,6 +6,7 @@ import {SearchInput} from '../../Components/FormInputs';
 import BookCard from '../../Components/BookCard';
 import {COLORS, FONTS} from '../../Configs/constants';
 import {GET_BOOKS_BY_SEARCH} from '../../Services';
+import I18n from '../../Utils/I18n';
 
 import {styles} from './styles';
 
@@ -46,8 +47,8 @@ export default function SearchScreen() {
           {isLoading
             ? ''
             : search.length > 0
-            ? 'Sorry... we did not find anything related'
-            : 'Please... type something to find awesome books!'}
+            ? `${I18n.t('search_null')}`
+            : `${I18n.t('search_empty')}`}
         </Text>
       </View>
     );
@@ -66,9 +67,7 @@ export default function SearchScreen() {
   if (error) {
     return (
       <View style={styles.errorMsg}>
-        <Text style={styles.textError}>
-          Error fetching data... Check your network connection!
-        </Text>
+        <Text style={styles.textError}>{I18n.t('library_error')}</Text>
       </View>
     );
   }
@@ -77,7 +76,7 @@ export default function SearchScreen() {
     <View style={styles.container}>
       <SearchInput
         style={styles.searchBar}
-        placeholder={'Search your favorite book here...'}
+        placeholder={I18n.t('search_input')}
         placeholderTextColor={COLORS.WHITE}
         placeholderStyle={styles.placeholder}
         value={search}

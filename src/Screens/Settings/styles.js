@@ -16,4 +16,8 @@ export const styles = StyleSheet.create({
     fontSize: FONTS.SIZE.H3,
     fontFamily: 'Montserrat-Regular',
   },
+  activityIndicator: {
+    flex: 1,
+    justifyContent: 'center',
+  },
 });

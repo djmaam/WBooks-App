@@ -1,6 +1,8 @@
 import React, {useEffect} from 'react';
 import {Modal, Text, TouchableOpacity, View} from 'react-native';
 
+import I18n from '../../Utils/I18n';
+
 import {styles} from './styles';
 
 export function ErrorModal(props) {
@@ -17,17 +19,29 @@ export function ErrorModal(props) {
     <Modal animationType="slide" transparent={true} visible={isVisible}>
       <View style={styles.centeredView}>
         <View style={styles.modalView}>
-          {first_name ? <Text style={styles.modalText}>{first_name}</Text> : null}
-          {last_name ? <Text style={styles.modalText}>{last_name}</Text> : null}
-          {email ? <Text style={styles.modalText}>{email}</Text> : null}
-          {age ? <Text style={styles.modalText}>{`Age is ${age}`}</Text> : null}
-          {tyc ? <Text style={styles.modalText}>{tyc}</Text> : null}
+          {first_name ? (
+            <Text style={styles.modalText}>{I18n.t('first_name_warning')}</Text>
+          ) : null}
+          {last_name ? (
+            <Text style={styles.modalText}>{I18n.t('last_name_warning')}</Text>
+          ) : null}
+          {email ? (
+            <Text style={styles.modalText}>{I18n.t('email_warning')}</Text>
+          ) : null}
+          {age ? (
+            <Text style={styles.modalText}>
+              {`${I18n.t('age_is')} ${I18n.t('required_age')}`}
+            </Text>
+          ) : null}
+          {tyc ? (
+            <Text style={styles.modalText}>{I18n.t('tyc_warning')}</Text>
+          ) : null}
           <TouchableOpacity
             style={styles.closeButton}
             onPress={() => {
               setIsVisible(!isVisible);
             }}>
-            <Text style={styles.closeText}>Close</Text>
+            <Text style={styles.closeText}>{I18n.t('close')}</Text>
           </TouchableOpacity>
         </View>
       </View>

@@ -1,6 +1,8 @@
 import React from 'react';
 import {View, Image, Text} from 'react-native';
+
 import {ContainedButton, OutlinedButton} from '../FormButtons';
+import I18n from '../../Utils/I18n';
 
 import {styles} from './styles';
 
@@ -25,7 +27,7 @@ export default function BookCardDetails(props) {
             <Text style={styles.textTitle}>{props.focusBook.title}</Text>
           </View>
           <View>
-            <Text style={styles.availability}>Available</Text>
+            <Text style={styles.availability}>{I18n.t('available')}</Text>
           </View>
           <View>
             <Text style={styles.textOther}>{props.focusBook.author}</Text>
@@ -39,8 +41,8 @@ export default function BookCardDetails(props) {
         </View>
       </View>
       <View style={styles.buttonContainer}>
-        <OutlinedButton label={'ADD TO WISHLIST'} />
-        <ContainedButton background={true} label={'RENT'} />
+        <OutlinedButton label={I18n.t('wishlist_button')} />
+        <ContainedButton background={true} label={I18n.t('rent_button')} />
       </View>
     </View>
   );

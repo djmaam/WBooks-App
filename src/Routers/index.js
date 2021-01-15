@@ -16,6 +16,8 @@ import * as Service from '../Services';
 
 import {COLORS} from '../Configs/constants';
 
+import I18n from '../Utils/I18n';
+
 export const AuthContext = createContext({});
 
 export default function Providers() {
@@ -44,6 +46,12 @@ export default function Providers() {
         return {
           ...prevState,
           user_token: action.token,
+          isLoading: false,
+        };
+      case 'SET_LANGUAGE':
+        return {
+          ...prevState,
+          language: action.language,
           isLoading: false,
         };
     }
@@ -82,6 +90,17 @@ export default function Providers() {
         }
         dispatch({type: 'LOGOUT'});
       },
+
+      changeLanguage: async (language) => {
+        try {
+          await AsyncStorage.setItem('@language', language);
+          console.log('CHANGE_LANGUAGE SUCCESS: ', language);
+        } catch (error) {
+          console.log('CHANGE_LANGUAGE ERROR: ', error);
+        }
+        I18n.locale = language;
+        dispatch({type: 'SET_LANGUAGE', language: language});
+      },
     };
   }, []);
 
@@ -108,15 +127,18 @@ export default function Providers() {
       let user_token = null;
       let first_name = null;
       let last_name = null;
+      let language = null;
       try {
         user_token = await AsyncStorage.getItem('@user_token');
         first_name = await AsyncStorage.getItem('@first_name');
         last_name = await AsyncStorage.getItem('@last_name');
+        language = await AsyncStorage.getItem('@language');
       } catch (error) {
         console.log('RETRIVING_DATA ERROR: ', error);
       }
       setUserData(first_name, last_name, user_token);
       dispatch({type: 'RETRIEVE_TOKEN', token: user_token});
+      dispatch({type: 'SET_LANGUAGE', language: language});
     }, 1000);
   }, []);
 

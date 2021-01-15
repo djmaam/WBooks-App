@@ -5,6 +5,7 @@ import {useNavigation} from '@react-navigation/native';
 import BookCard from '../../Components/BookCard';
 import {COLORS} from '../../Configs/constants';
 import {GET_BOOKS} from '../../Services';
+import I18n from '../../Utils/I18n';
 
 import {styles} from './styles';
 
@@ -43,9 +44,7 @@ export default function LibraryScreen(props) {
   if (error) {
     return (
       <View style={styles.errorMsg}>
-        <Text style={styles.textError}>
-          Error fetching data... Check your network connection!
-        </Text>
+        <Text style={styles.textError}>{I18n.t('library_error')}</Text>
       </View>
     );
   }

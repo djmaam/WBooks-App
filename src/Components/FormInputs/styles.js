@@ -15,6 +15,11 @@ export const styles = StyleSheet.create({
     borderBottomColor: COLORS.BLUE,
     borderBottomWidth: 1,
   },
+  languagePicker: {
+    color: COLORS.TEXT,
+    borderBottomColor: COLORS.BLUE,
+    borderBottomWidth: 1,
+  },
   textPicker: {
     color: COLORS.TEXT,
     fontFamily: 'Montserrat-Regular',

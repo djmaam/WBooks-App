@@ -3,7 +3,8 @@ import {COLORS} from '../../Configs/constants';
 
 export const styles = StyleSheet.create({
   container: {
-    marginTop: 60,
+    flex: 1,
+    marginTop: 50,
     backgroundColor: COLORS.BACKGROUND,
   },
 });

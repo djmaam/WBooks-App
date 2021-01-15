@@ -9,6 +9,7 @@ import {SignInButton} from '../../Components/FormButtons';
 import {ErrorModal} from '../../Components/ErrorModal';
 import {AuthContext} from '../../Routers/index';
 import {COLORS} from '../../Configs/constants';
+import I18n from '../../Utils/I18n';
 
 import {styles} from './styles';
 
@@ -16,14 +17,17 @@ const background = require('../../Assets/General/bc_inicio.png');
 const logo = require('../../Assets/General/ic_group.png');
 
 const LoginSchema = Yup.object().shape({
-  first_name: Yup.string().min(2, 'First name too short!').required('Required'),
-  last_name: Yup.string().min(2, 'Last name too short!').required('Required'),
-  email: Yup.string().email('The email is not valid!').required('Required'),
-  age: Yup.string().required('Required!'),
-  tyc: Yup.bool().oneOf(
-    [true],
-    'To sign in it is necessary that you first accept the terms and conditions.',
-  ),
+  first_name: Yup.string()
+    .min(2, `${I18n.t('first_name_warning')}`)
+    .required(`${I18n.t('required')}`),
+  last_name: Yup.string()
+    .min(2, `${I18n.t('last_name_warning')}`)
+    .required(`${I18n.t('required')}`),
+  email: Yup.string()
+    .email(`${I18n.t('email_warning')}`)
+    .required(`${I18n.t('required')}`),
+  age: Yup.string().required(`${I18n.t('required')}`),
+  tyc: Yup.bool().oneOf([true], `${I18n.t('tyc_warning')}`),
 });
 
 export default function LoginScreen() {
@@ -80,7 +84,7 @@ export default function LoginScreen() {
               placeholderTextColor={COLORS.TEXT}
               type={'name'}
               label={'first_name'}
-              placeholder={'First name'}
+              placeholder={I18n.t('first_name')}
               keyboardType={'default'}
               value={values.first_name}
               onChangeText={handleChange('first_name')}
@@ -91,7 +95,7 @@ export default function LoginScreen() {
               placeholderTextColor={COLORS.TEXT}
               type={'name'}
               label={'last_name'}
-              placeholder={'Last name'}
+              placeholder={I18n.t('last_name')}
               keyboardType={'default'}
               value={values.last_name}
               onChangeText={handleChange('last_name')}
@@ -104,7 +108,7 @@ export default function LoginScreen() {
             autoCapitalize="none"
             type={'email'}
             label={'email'}
-            placeholder={'Email'}
+            placeholder={I18n.t('email')}
             keyboardType={'email-address'}
             value={values.email}
             onChangeText={handleChange('email')}
@@ -117,7 +121,7 @@ export default function LoginScreen() {
               editable={false}
               type={'age'}
               label={'age'}
-              placeholder={'Age'}
+              placeholder={I18n.t('age')}
               style={styles.pickerLabel}
             />
             <View style={styles.inputPicker}>
@@ -133,9 +137,7 @@ export default function LoginScreen() {
               onValueChange={(checked) => setFieldValue('tyc', checked)}
               tintColors={{true: COLORS.WHITE, false: COLORS.WHITE}}
             />
-            <Text style={styles.textTyc}>
-              I have read and accept the terms and conditions.
-            </Text>
+            <Text style={styles.textTyc}>{I18n.t('tyc')}</Text>
           </View>
           <SignInButton
             disabled={
@@ -149,7 +151,7 @@ export default function LoginScreen() {
                 ? true
                 : false
             }
-            label={'SIGN IN'}
+            label={I18n.t('sign_in_button')}
             onPress={handleSubmit}
             isLoading={isLoading}
           />

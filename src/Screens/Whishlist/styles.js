@@ -17,8 +17,4 @@ export const styles = StyleSheet.create({
     fontSize: FONTS.SIZE.H3,
     fontFamily: 'Montserrat-Regular',
   },
-  image: {
-    width: 275,
-    height: 180,
-  },
 });

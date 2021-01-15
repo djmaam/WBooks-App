@@ -11,6 +11,12 @@ __generated__
 *.ap_
 *.aab
 
+# BUCK
+buck-out/
+\.buckd/
+*.keystore
+!debug.keystore
+
 # Files for the ART/Dalvik VM
 *.dex
 

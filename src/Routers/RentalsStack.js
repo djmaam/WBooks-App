@@ -7,6 +7,8 @@ import RentalsScreen from '../Screens/Rentals';
 
 import {COLORS} from '../Configs/constants';
 
+import I18n from '../Utils/I18n';
+
 const RentalsStack = createStackNavigator();
 
 export default function RentalsStackScreen() {
@@ -16,7 +18,7 @@ export default function RentalsStackScreen() {
         name="Rentals"
         component={RentalsScreen}
         options={{
-          title: 'RENTALS',
+          title: `${I18n.t('rentals')}`,
           headerTintColor: COLORS.WHITE,
           headerBackground: (props) => <HeaderBackground />,
           headerTitleStyle: {
